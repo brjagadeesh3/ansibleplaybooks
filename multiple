@@ -1,0 +1,8 @@
+---
+- name: Mytest playbooks 
+  hosts: all
+  become: true
+  tasks: 
+  - name: install packages
+    user: name= ['gubbi', 'tumkur', 'mysore', 'jaga01', 'kumar', 'nalina', 'dimpu' ] 
+     state: present

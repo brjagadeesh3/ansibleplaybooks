@@ -1,0 +1,12 @@
+---
+- name: Coping the all files in tmp to nodes tmp
+  hosts: webservers
+  become: yes
+  tasks:
+  - name: coping hellofile from server to node
+    copy: 
+     src: /tmp/file1
+     dest: /tmp
+     mode: 0600
+     owner: vasanth
+

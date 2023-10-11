@@ -1,0 +1,12 @@
+---
+- name: file creating playbook
+  hosts: all
+  become: true
+  tasks:
+  - name: creating file
+    file:
+     path: /home/jagadeesh/demofile
+     state: touch
+
+
+

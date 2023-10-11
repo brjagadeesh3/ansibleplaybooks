@@ -1,0 +1,16 @@
+---
+- name: install some package in all nodes
+  hosts: all
+  become: true
+  tasks:
+
+  - name: stop  git in all nodes
+    service:
+      name: httpd
+      state: stopped
+
+  - name: start service in all nodes
+    yum:
+      name: httpd
+      state: removed
+

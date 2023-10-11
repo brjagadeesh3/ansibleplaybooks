@@ -1,0 +1,10 @@
+---
+- name: deleting the dir
+  hosts: all
+  become: true
+  tasks:
+  - name: delting the directotys
+    file: 
+     path: /home/jagadeesh/devops
+     state: absent
+

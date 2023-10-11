@@ -1,0 +1,8 @@
+---
+- name: this palybook createthe users
+  hosts: all
+  become: yes
+  tasks: 
+  - name: creating ram user
+    user: name=ram
+

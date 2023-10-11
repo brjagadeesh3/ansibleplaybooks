@@ -1,0 +1,9 @@
+---
+- name: this palybook createthe users
+  hosts: webservers[0]
+  become: yes
+  tasks: 
+  - name: creating sujatha
+    user: 
+      name: sujatha02
+

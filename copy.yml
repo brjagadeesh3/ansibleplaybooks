@@ -1,0 +1,12 @@
+---
+- name: copying from server to nodes
+  hosts: webservers[1]
+  become: true
+  tasks:
+  - name: copying file 
+    copy:
+     src: /home/jagadeesh/new.yml
+     dest: /root
+     mode: 0600
+     owner: vasanth
+

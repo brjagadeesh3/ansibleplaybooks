@@ -1,0 +1,37 @@
+---
+- name: install some package in all nodes
+  hosts: all
+  become: true
+  tasks:
+
+  - name: install git in all nodes
+    yum:
+      name: httpd
+      state: installed
+    when: ansible_os_family == "RedHat"
+
+  - name: start service in all nodes
+    service:
+      name: http
+      state: started
+    when: ansible_os_family == "RedHat"
+    ignore_errors: yes  
+
+  - name: install git in all nodes
+    yum:
+      name: apache2
+      state: installed
+    when: ansible_os_family == "Dabian"
+
+  - name: start service in all nodes
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "Debian"
+
+  - name: copy index.html
+    copy:
+      src: /home/jagadeesh/index.html
+      dest: /var/www/html
+      mode: 0666
+
